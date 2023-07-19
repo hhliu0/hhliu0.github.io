@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="shared.css">
+        <link rel="stylesheet" href="fleet_en.css">
+        <script src="shared.js" defer></script>
+        <script src="fleet.js" defer></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        
+        <!-- Icon Sources -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="https://kit.fontawesome.com/1c4c0a6da4.js" crossorigin="anonymous"></script>
+        
+        <title>Island Navigation | Fleet</title>
+    </head>
+    <body>
+        <!-- Go to Top Button -->
+        <button title="Go to Top" id="myBtn" onclick="topFunction()">
+            <ion-icon name="arrow-up-outline" class="up-icon"></ion-icon>
+        </button>
+
+        <!-- Navbar -->
+        <nav>
+            <img src="images/logo.png" alt="logo" class="logo">
+            <h1>Island Navigation Corp<wbr>oration</h1>
+            
+            <ul class = "nav-links">
+                <li><a href="index_en.html" class="nav-link">Home</a></li>
+                <li><a href="index_en.html#about" class="nav-link">About Us</a></li>
+                <li><a href="index_en.html#partners" class="nav-link">Partners</a></li>
+                <li><a href="fleet_en.html" class="nav-link">Fleet</a></li>
+                <li><a href="index_en.html#community" class="nav-link">Community</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li>
+            </ul>
+            
+            <div class="lang-sel">
+                <div class="curr-lang">EN</div>
+                <div class="lang-opts">
+                    <a href="index_cn.html">简</a>
+                    <a href="index_hk.html">繁</a>
+                </div>
+            </div>
+
+            <button id="burger-menu">
+                <ion-icon class="bars" name="menu-outline"></ion-icon>
+            </button>
+        </nav>
+
+        <!-- Full fleet section -->
+        <section id="fleet">
+
+            <div class="section-title">
+                <h1>Our Fleet</h1>
+            </div>
+
+            <div class="filter-bar">
+            
+                <div class="filter">
+                    <p>Type:</p>
+                    <select id="type" onchange="getFilterOption(this)">
+                    <option selected>All</option>
+                    <option value="tanker">Tanker</option>
+                    <option value="cargo">Dry Cargo</option>
+                    </select>
+                </div>
+
+                <div class="filter">
+                    <p>Year:</p>
+                    <select id="year" onchange="getFilterOption(this)">
+                    <option selected>All</option>
+                    <option value="newer">2019–</option>
+                    <option value="new">2013–2018</option>
+                    <option value="old">2006–2012</option>
+                    </select>
+                </div>
+                <div class="joined">
+                    <div class="filter">
+                        <p>Flag:</p>
+                        <select id="flag" onchange="getFilterOption(this)">
+                        <option selected>All</option>
+                        <option value="hk">🇭🇰 Hong Kong</option>
+                        <option value="lr">🇱🇷 Liberia</option>
+                        <option value="mh">🇲🇭 Marshall Is.</option>
+                        <option value="pa">🇵🇦 Panama</option>
+                        <option value="sg">🇸🇬 Singapore</option>
+                        </select>
+                    </div>
+                
+                    <div class="sort">
+                        <p>Sort by:</p>
+                        <select id="sort" onchange="applySortBy(this)">
+                        <option selected>Default</option>
+                        <option value="name">Name</option>
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="capacity">Capacity</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cards-container">
+
+                <!-- Tanker Fleet -->
+
+                <div class="ship-card tanker newer mh">
+                    <img src="images/fleet/tanker/Alder_Express.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Alder Express</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2022</p>
+                        <p>Shipyard: K Shipbuilding</p>
+                        <p>Flag: Marshall Islands</p>
+                        
+                        <div class="stats-container">
+                            <div><b>Type</b><span>IMO II/III</span></div>
+                            <div><b>Summer Draft (m)</b><span>13.3</span></div>
+                            <div><b>GT</b><span>29,472</span></div>
+                            <div><b>LOA (m)</b><span>182.9</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>49,832</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card tanker newer mh">
+                    <img src="images/fleet/tanker/Aspen_Express.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Aspen Express</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2021</p>
+                        <p>Shipyard: K Shipbuilding</p>
+                        <p>Flag: Marshall Islands</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>IMO II/III</span></div>
+                            <div><b>Summer Draft (m)</b><span>13.3</span></div>
+                            <div><b>GT</b><span>29,472</span></div>
+                            <div><b>LOA (m)</b><span>182.9</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>49,757</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card tanker new mh">
+                    <img src="images/fleet/tanker/Cedar_Express.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Cedar Express</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2013</p>
+                        <p>Shipyard: Hyundai Mipo Dockyard</p>
+                        <p>Flag: Marshall Islands</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>IMO II/III</span></div>
+                            <div><b>Summer Draft (m)</b><span>12.071</span></div>
+                            <div><b>GT</b><span>29,703</span></div>
+                            <div><b>LOA (m)</b><span>182.9</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>49,999</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card tanker old hk">
+                    <img src="images/fleet/tanker/Challenge_Prelude.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Challenge Prelude</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2006</p>
+                        <p>Shipyard: Iwagi Zosen</p>
+                        <p>Flag: Hong Kong</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>CPP</span></div>
+                            <div><b>Summer Draft (m)</b><span>12.616</span></div>
+                            <div><b>GT</b><span>28,823</span></div>
+                            <div><b>LOA (m)</b><span>179.99</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>48,555</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card tanker old hk">
+                    <img src="images/fleet/tanker/Diamond_Express.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Diamond Express</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2009</p>
+                        <p>Shipyard: Minaminippon Shipbuilding</p>
+                        <p>Flag: Hong Kong</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>CPP</span></div>
+                            <div><b>Summer Draft (m)</b><span>11.996</span></div>
+                            <div><b>GT</b><span>27,976</span></div>
+                            <div><b>LOA (m)</b><span>179.8</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>45,634</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card tanker old hk">
+                    <img src="images/fleet/tanker/Island_Express.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Island Express</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2006</p>
+                        <p>Shipyard: Minaminippon Shipbuilding</p>
+                        <p>Flag: Hong Kong</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>CPP</span></div>
+                            <div><b>Summer Draft (m)</b><span>12.116</span></div>
+                            <div><b>GT</b><span>27,969</span></div>
+                            <div><b>LOA (m)</b><span>179.8</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>45,728</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card tanker newer mh">
+                    <img src="images/fleet/tanker/Magnolia_Express.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Magnolia Express</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2021</p>
+                        <p>Shipyard: K Shipbuilding</p>
+                        <p>Flag: Marshall Islands</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>IMO II/III</span></div>
+                            <div><b>Summer Draft (m)</b><span>13.3</span></div>
+                            <div><b>GT</b><span>27,969</span></div>
+                            <div><b>LOA (m)</b><span>182.9</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>48,796</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card tanker newer mh">
+                    <img src="images/fleet/tanker/Mulberry_Express.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Mulberry Express</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2022</p>
+                        <p>Shipyard: K Shipbuilding</p>
+                        <p>Flag: Marshall Islands</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>IMO II/III</span></div>
+                            <div><b>Summer Draft (m)</b><span>13.3</span></div>
+                            <div><b>GT</b><span>29,472</span></div>
+                            <div><b>LOA (m)</b><span>182.9</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>49,857</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card tanker new pa">
+                    <img src="images/fleet/tanker/Nord_Olympia.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Nord Olympia</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2018</p>
+                        <p>Shipyard: Onomichi Dockyard</p>
+                        <p>Flag: Panama</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>IMO II/III</span></div>
+                            <div><b>Summer Draft (m)</b><span>13.08</span></div>
+                            <div><b>GT</b><span>29,513</span></div>
+                            <div><b>LOA (m)</b><span>182.5</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>49,995</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card tanker old hk">
+                    <img src="images/fleet/tanker/Oak_Express.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Oak Express</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2009</p>
+                        <p>Shipyard: Hyundai Mipo Dockyard</p>
+                        <p>Flag: Hong Kong</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>IMO III</span></div>
+                            <div><b>Summer Draft (m)</b><span>12.315</span></div>
+                            <div><b>GT</b><span>28,985</span></div>
+                            <div><b>LOA (m)</b><span>183.17</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>46,697</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ship-card tanker old hk">
+                    <img src="images/fleet/tanker/Pine_Express.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Pine Express</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2010</p>
+                        <p>Shipyard: Hyundai Mipo Dockyard</p>
+                        <p>Flag: Hong Kong</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>IMO III</span></div>
+                            <div><b>Summer Draft (m)</b><span>12.315</span></div>
+                            <div><b>GT</b><span>28,985</span></div>
+                            <div><b>LOA (m)</b><span>183.17</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>46,710</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card tanker old hk">
+                    <img src="images/fleet/tanker/Topaz_Express.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Topaz Express</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2009</p>
+                        <p>Shipyard: Minaminippon Shipbuilding</p>
+                        <p>Flag: Hong Kong</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>CPP</span></div>
+                            <div><b>Summer Draft (m)</b><span>11.992</span></div>
+                            <div><b>GT</b><span>27,976</span></div>
+                            <div><b>LOA (m)</b><span>182.9</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>45,650</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cargo Fleet -->
+
+                <div class="ship-card cargo newer lr">
+                    <img src="images/fleet/drycargo/Bulk_Geneva.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Bulk Geneva</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2019</p>
+                        <p>Shipyard: Shin Kasado Dock</p>
+                        <p>Flag: Liberia</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>Ultramax</span></div>
+                            <div><b>Summer Draft (m)</b><span>13.418</span></div>
+                            <div><b>GT</b><span>35,953</span></div>
+                            <div><b>LOA (m)</b><span>199.98</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>63,340</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card cargo old lr">
+                    <img src="images/fleet/drycargo/Bulk_Mexico.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Bulk Mexico</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2010</p>
+                        <p>Shipyard: Shanghai Waigaoqiao</p>
+                        <p>Flag: Liberia</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>Capesize</span></div>
+                            <div><b>Summer Draft (m)</b><span>18.323</span></div>
+                            <div><b>GT</b><span>91,412</span></div>
+                            <div><b>LOA (m)</b><span>292</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>176,354</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card cargo old lr">
+                    <img src="images/fleet/drycargo/Bulk_Spain.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Bulk Spain</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2011</p>
+                        <p>Shipyard: Shanghai Waigaoqiao</p>
+                        <p>Flag: Liberia</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>Capesize</span></div>
+                            <div><b>Summer Draft (m)</b><span>18.323</span></div>
+                            <div><b>GT</b><span>91,412</span></div>
+                            <div><b>LOA (m)</b><span>292</span></div>
+                            <div><b>Class</b><span>BV</span></div>
+                            <div><b>DWT</b><span>176,328</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card cargo new sg">
+                    <img src="images/fleet/drycargo/Pacific_Assurance.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Pacific Assurance</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2014</p>
+                        <p>Shipyard: Imabari Saijo</p>
+                        <p>Flag: Singapore</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>Capesize</Canvas></span></div>
+                            <div><b>Summer Draft (m)</b><span>18.27</span></div>
+                            <div><b>GT</b><span>107,222</span></div>
+                            <div><b>LOA (m)</b><span>299.94</span></div>
+                            <div><b>Class</b><span>NK</span></div>
+                            <div><b>DWT</b><span>207,842</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card cargo new hk">
+                    <img src="images/fleet/drycargo/Pacific_Concord.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Pacific Concord</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2013</p>
+                        <p>Shipyard: Beihai Shipyard</p>
+                        <p>Flag: Hong Kong</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>Capesize</span></div>
+                            <div><b>Summer Draft (m)</b><span>18.1</span></div>
+                            <div><b>GT</b><span>94,866</span></div>
+                            <div><b>LOA (m)</b><span>295</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>180,032</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card cargo new hk">
+                    <img src="images/fleet/drycargo/Pacific_Courage.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Pacific Courage</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2013</p>
+                        <p>Shipyard: Beihai Shipyard</p>
+                        <p>Flag: Hong Kong</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>Capesize</span></div>
+                            <div><b>Summer Draft (m)</b><span>18.1</span></div>
+                            <div><b>GT</b><span>94,866</span></div>
+                            <div><b>LOA (m)</b><span>295</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>180,008</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card cargo new hk">
+                    <img src="images/fleet/drycargo/Pacific_Glory.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Pacific Glory</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2017</p>
+                        <p>Shipyard: Beihai Shipyard</p>
+                        <p>Flag: Hong Kong</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>Capesize</span></div>
+                            <div><b>Summer Draft (m)</b><span>18.1</span></div>
+                            <div><b>GT</b><span>94,754</span></div>
+                            <div><b>LOA (m)</b><span>295</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>180,008</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ship-card cargo new hk">
+                    <img src="images/fleet/drycargo/Pacific_Grace.png" alt="">
+
+                    <div class="ship-info">
+                        <h3>Pacific Grace</h3>
+                        <hr>
+                        <p class="ship-year">Year Built: 2017</p>
+                        <p>Shipyard: Beihai Shipyard</p>
+                        <p>Flag: Hong Kong</p>
+
+                        <div class="stats-container">
+                            <div><b>Type</b><span>Capesize</span></div>
+                            <div><b>Summer Draft (m)</b><span>18.1</span></div>
+                            <div><b>GT</b><span>94,754</span></div>
+                            <div><b>LOA (m)</b><span>295</span></div>
+                            <div><b>Class</b><span>ABS</span></div>
+                            <div><b>DWT</b><span>180,008</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="none-msg"><h3>No ships found!</h3></div>
+        </section>
+
+        <!-- Contact section -->
+        <section id = "contact">
+            <div class = "contact-container">
+                <div class = "contact-bg-container">
+                    <img
+                    src = "images/contact-bg.png"
+                    class="contact-bg not-selectable">
+                    <div class = "contact-overlay"></div>
+                </div>
+                <div class = "contact-content">
+                    <div class = "contact-us-container">
+                        <div class = "address-container">
+                            <h2>Contact Us</h2>
+                            <p>33/F Harbour Centre</p>
+                            <p>25 Harbour Road</p>
+                            <p>Wanchai, Hong Kong</p>
+                        </div>
+
+                        <div class = contact-details-container>
+                            <div class = "contact-method">
+                                <ion-icon name="time-outline"></ion-icon>
+                                <div class = "contact-details">
+                                    <p>Office Hours:</p>
+                                    <span>Monday - Friday <br> 09:00 - 18:00</span>
+                                </div>
+                            </div>
+                            <div class = "contact-method">
+                                <ion-icon name="call-outline"></ion-icon>
+                                <div class = "contact-details">
+                                    <p>Main Line:</p>
+                                    <span>+852 2833 3222</span>
+                                </div>
+                            </div>
+                            <div class = "contact-method">
+                                <ion-icon name="file-tray-full-outline"></ion-icon>
+                                <div class = "contact-details">
+                                    <p>Fax:</p>
+                                    <span>+852 2827 0001</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <div class="contact-form">
+                            <form id="my-form" 
+                            action="#" 
+                            method="POST">
+                            <div class="form-control">
+                                <div class = "required-label">
+                                    <label for="name">Name
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter Your Name"
+                                class="input-field"
+                                required
+                                autocomplete="name"
+                                />
+                            </div>
+                            <div class="form-control">
+                                <div class = "required-label">
+                                    <label for="email">Email
+                                        <span class="required">*</span>
+                                    </label>
+                                </div>
+                                <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter Your Email"
+                                class="input-field"
+                                required
+                                autocomplete="email"
+                                />
+                            </div>
+                            <div class="form-control">
+                                <label for="phone">Phone</label>
+                                <input
+                                type="text"
+                                id="phone"
+                                name="phone"
+                                placeholder="Enter Your Phone Number"
+                                class="input-field"
+                                autocomplete="mobile"
+                                ></input>
+                            </div>
+                            <div class="form-control">
+                                <label for="message">Message</label>
+                                <textarea
+                                id="message"
+                                cols="60"
+                                rows="6"
+                                placeholder="Enter Your Message"
+                                name="message"
+                                class="input-field"
+                                ></textarea>
+                            </div>
+                            <input
+                                type="submit"
+                                value="Submit"
+                                id="submit-btn"
+                                class="submit-btn"
+                            />
+                            </form>
+                        </div>
+                        </div>
+                        <div id="thank-you-message" style="display:none;">
+                        <div class="thank-you-message">
+                            <h4>Thank you for reaching out!</h4>
+                            <p>I will get back to you as soon as possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <ul class = "footer-nav">
+                <li><a href="index_en.html#home">Home</a></li>
+                <li><a href="index_en.html#about">About Us</a></li>
+                <li><a href="index_en.html#partners">Partners</a></li>
+                <li><a href="index_en.html#fleet">Fleet</a></li>
+                <li><a href="index_en.html#community">Community</a></li>
+                <li><a href="index_en.html#contact">Contact Us</a></li>
+            </ul>
+            <div class="footer-container">
+                <img src="images/logo.png" alt="footer-logo" class = "footer-logo"/>
+                <h1>Island Navigation Corporation International Limited</h1>
+
+                <a href="mailto: jaque.liu@isnav.com" target="_blank">
+                    <ion-icon name = "mail" class="socicon"
+                        aria-label="Email">
+                    </ion-icon>
+                </a>
+                
+                <a href="#" target="_blank">
+                    <ion-icon name = "logo-linkedin" class="socicon"
+                        aria-label="LinkedIn">
+                    </ion-icon>
+                </a>
+                    
+                <a href="#" target="_blank">
+                    <ion-icon name = "logo-wechat" class="socicon"
+                        aria-label="WeChat">
+                    </ion-icon>
+                </a>
+
+                <a href="#" target="_blank">
+                    <ion-icon name = "logo-youtube" class="socicon"
+                        aria-label="YouTube">
+                    </ion-icon>
+                </a>
+            </div>
+            <div class="copyright">
+                &copy 2023.
+                <!-- Island Navigation Corporation International Limited.  -->
+                All rights reserved.
+            </div>
+        </footer>
+    </body>
+</html>

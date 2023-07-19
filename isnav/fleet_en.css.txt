@@ -1,0 +1,159 @@
+#fleet {
+    display: none; /* Show content after js loads correct type filter */
+    margin-top: 5rem; /* Made constant by hiding overflow */
+}
+
+.filter-bar {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 2%;
+    color: var(--secondary-color)
+}
+
+/* Move both capacity and sort by to new line when no space */
+.joined {
+    flex: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter {
+    padding-right: 3%;
+}
+
+.joined .filter {
+    padding-right: calc(0.03 * 0.96 * (100vw - 2rem));
+}
+
+.sort {
+    margin-left: auto;
+}
+
+#cards-container {
+    display: grid;
+    /* 20 /in (100/5 - e, 100/4 - e), 80 /in (50, 100 - e) */
+    grid-template-columns: repeat(auto-fill, minmax(min(max(300px,20vw),80vw), 1fr));
+    gap: 2vw;
+    padding: 2%;
+}
+
+.ship-card {
+    display: none;
+    background-color: white;
+}
+
+.ship-card img {
+    max-width: 100%;
+}
+
+.ship-year {
+    color: red; 
+}
+
+.ship-info {
+    container-type: inline-size;
+    color: #000066;
+    padding: 1rem 0;
+}
+
+.ship-info p {
+    line-height: 2rem; /* Default for p is --line-height = 1.7rem */
+    font-size: 1.1rem ;
+}
+
+hr {
+    height: 2px;
+    width: 80%;
+    margin: 0.5em auto; /* 'auto' centers horizontally, don't need flex just for that */
+    border: none;
+    background-color: #000066;
+}
+
+.stats-container {
+    display: grid;
+    margin: 1rem auto;
+    width: 350px;
+    /* https://stackoverflow.com/questions/38510300/how-to-set-flex-basis-on-secondary-axis */
+    max-width: 80%;
+    column-gap: 4%;
+    grid-template-rows: 3.5rem 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: left;
+    font-size: 1rem;
+}
+
+.stats-container span {
+    display: block;
+}
+
+.stats-container > div:nth-child(1) { /* nth-child is 1-indexed */
+    grid-column: 1 / 3;
+}
+
+.stats-container > div:nth-child(2) { /* > is child selector, more strict than descendant) */
+    grid-column: 3 / 5;
+}
+
+.stats-container > div:nth-child(3) {
+    grid-row: 2 / 3;
+}
+
+#none-msg {
+    color: var(--secondary-color);
+    padding-bottom: 4%;
+}
+
+/* Media query fallbacks (come first, overridden if @container supported) */
+/* https://stackoverflow.com/questions/74465862/chain-css-media-and-container-queries */
+
+/* https://css-tricks.com/logic-in-css-media-queries/ */
+/* @media (min <= width <= max) also introduced ~Aug 2022 */
+
+/* Two cols */
+@media
+    (max-width: 1638px) and (min-width: 1470px),
+    (max-width: 1235px) and (min-width: 1112px),
+    (max-width: 751px) and (min-width: 671px),
+    (max-width: 384px)
+{
+    .stats-container {
+        display: block;
+        max-width: 70%;
+        line-height: 1.5em;
+    }
+    .stats-container span {
+        display: inline;
+        float: right;
+    }
+}
+
+/* Four cols */
+@media
+    (max-width: 1469px) and (min-width: 1236px), 
+    (max-width: 1111px) and (min-width: 752px),
+    (max-width: 670px) and (min-width: 385px)
+{
+    .stats-container {
+        display: grid;
+        max-width: 80%;
+    }
+    .stats-container span {
+        display: block;
+        float: none;
+    }
+}
+
+/* Container query introduced ~Aug 2022 */
+
+@container (width < 338px) {
+    .stats-container {
+        display: block;
+        max-width: 70%;
+        line-height: 1.5em;
+    }
+    .stats-container span {
+        display: inline;
+        float: right;
+    }
+}

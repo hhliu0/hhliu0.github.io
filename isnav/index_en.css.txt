@@ -1,0 +1,137 @@
+/* Hero Section */
+
+.hero{
+    padding: 0;
+    position: relative;
+    margin-top: 5rem; /* See comment at fleet_style_en.css > #fleet */
+}
+
+.hero-container {
+    height: calc(100vh - 5rem);
+}
+
+.hero-container video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    padding: 0.5rem 2rem;
+    background-color: white;
+    text-align: left;
+}
+
+.hero-overlay h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+
+}
+.hero-overlay h1 {
+    font-size: 4rem;
+    color: var(--tertiary-color);
+}
+
+/* About Section */
+
+.counter-container{
+    display: flex;
+    /* align-items: center; */
+}
+
+.counter-container .counter-box{
+    background-color: white;
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.counter {
+    flex: 1;
+    font-size: 3rem;
+    color: var(--primary-color);
+    visibility: hidden;
+    padding: 2rem 0rem;
+}
+
+.counter-text{
+    background-color: var(--tertiary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    padding: 0.5rem 0rem;
+    border-top: 8px solid black;
+}
+
+/* Partners Section */
+
+.swiper-container {
+    position: relative;
+    max-width: 100%;
+}
+
+.swiper-pagination {
+    bottom: -30px!important;
+}
+
+.swiper {
+    width: calc(100vw - 15rem);
+    height: 100%;
+}
+
+.swiper-slide {
+    font-size: 18px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-card {
+    height: 250px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.slide-card img {
+    margin-top: auto;
+    max-width: 15rem;
+    max-height: 10rem;
+}
+
+.slide-card h4 {
+    margin-top: auto;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.swiper-slide a {
+    text-decoration: none;
+}
+
+/* Fleet Section */
+
+#fleet {
+    margin-top: 30px; /* Account for shifted pagination dots */
+}
+
+.fleet-overview {
+    display: flex;
+    justify-content: space-around; /* or space-evenly */
+}
+
+.fleet-overview a{
+    display: block;
+}
+
+/* Community Section */
+
+
